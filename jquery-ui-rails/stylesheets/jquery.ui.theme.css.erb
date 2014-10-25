@@ -1,18 +1,32 @@
 /*!
- * jQuery UI CSS Framework 1.10.3
+ * jQuery UI CSS Framework 1.11.2
  * http://jqueryui.com
  *
- * Copyright 2013 jQuery Foundation and other contributors
+ * Copyright 2014 jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
- * http://docs.jquery.com/UI/Theming/API
+ * http://api.jqueryui.com/category/theming/
  *
  * To view and modify this theme, visit http://jqueryui.com/themeroller/
  */
+
 /*
- *= require jquery.ui.core
+ *= depend_on_asset "jquery-ui/ui-bg_flat_75_ffffff_40x100.png"
+ *= depend_on_asset "jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100.png"
+ *= depend_on_asset "jquery-ui/ui-bg_glass_75_e6e6e6_1x400.png"
+ *= depend_on_asset "jquery-ui/ui-bg_glass_75_dadada_1x400.png"
+ *= depend_on_asset "jquery-ui/ui-bg_glass_65_ffffff_1x400.png"
+ *= depend_on_asset "jquery-ui/ui-bg_glass_55_fbf9ee_1x400.png"
+ *= depend_on_asset "jquery-ui/ui-bg_glass_95_fef1ec_1x400.png"
+ *= depend_on_asset "jquery-ui/ui-icons_222222_256x240.png"
+ *= depend_on_asset "jquery-ui/ui-icons_888888_256x240.png"
+ *= depend_on_asset "jquery-ui/ui-icons_454545_256x240.png"
+ *= depend_on_asset "jquery-ui/ui-icons_2e83ff_256x240.png"
+ *= depend_on_asset "jquery-ui/ui-icons_cd0a0a_256x240.png"
+ *= depend_on_asset "jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png"
  */
+
 
 
 /* Component containers
@@ -79,7 +93,11 @@
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
-.ui-state-hover a:visited {
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
 	color: #212121/*{fcHover}*/;
 	text-decoration: none;
 }
@@ -138,18 +156,18 @@
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
 	opacity: .7;
-	filter:Alpha(Opacity=70);
+	filter:Alpha(Opacity=70); /* support: IE8 */
 	font-weight: normal;
 }
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
 	opacity: .35;
-	filter:Alpha(Opacity=35);
+	filter:Alpha(Opacity=35); /* support: IE8 */
 	background-image: none;
 }
 .ui-state-disabled .ui-icon {
-	filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
+	filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
 }
 
 /* Icons
@@ -397,13 +415,13 @@
 .ui-widget-overlay {
 	background: #aaaaaa/*{bgColorOverlay}*/ url(<%= image_path("jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png") %>)/*{bgImgUrlOverlay}*/ 50%/*{bgOverlayXPos}*/ 50%/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/;
 	opacity: .3/*{opacityOverlay}*/;
-	filter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/; /* support: IE8 */
 }
 .ui-widget-shadow {
 	margin: -8px/*{offsetTopShadow}*/ 0 0 -8px/*{offsetLeftShadow}*/;
 	padding: 8px/*{thicknessShadow}*/;
 	background: #aaaaaa/*{bgColorShadow}*/ url(<%= image_path("jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png") %>)/*{bgImgUrlShadow}*/ 50%/*{bgShadowXPos}*/ 50%/*{bgShadowYPos}*/ repeat-x/*{bgShadowRepeat}*/;
 	opacity: .3/*{opacityShadow}*/;
-	filter: Alpha(Opacity=30)/*{opacityFilterShadow}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterShadow}*/; /* support: IE8 */
 	border-radius: 8px/*{cornerRadiusShadow}*/;
 }
